@@ -1,23 +1,38 @@
+import React, { useState } from 'react';
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
+
+
 function Contact() {
+
+    const [email, setEmail] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [message, setMessage] = useState('');
+
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleChange = (e) => {
+		
+		const { target } = e;
+		const inputType = target.name;
+		const inputValue = target.value;
+
+		
+		if (inputType === 'email') {
+			setEmail(inputValue);
+		} else if (inputType === 'fullName') {
+			setFullName(inputValue);
+		} else {
+			setMessage(inputValue);
+		}
+	};
+
     return (
-        <article class="content-item" id="Contact Me">
-            <div>
-                <ul class="contact-info">
-                    <li>
-                        <a href="tel:+17046069181">704.606.9181</a>
-                    </li>
-                    <li>
-                        <a href="mailto:ryann.goldberg127@gmail.com">ryann.goldberg127@gmail.com</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/ryann127?tab=repositories">GitHub</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/ryann-goldberg-9a8b71180/">LinkedIn</a>
-                    </li>
-                </ul>
-            </div>
-        </article>
+       
     )
 }
 
