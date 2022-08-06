@@ -115,13 +115,12 @@ function Contact() {
 				</div>
 				{errorMessage && (
 								<div>
-									<p className="error-text text-center text-lg animate-pulse">
-										<i className="fa-solid fa-triangle-exclamation pr-2"></i>
+									<p className="error-text text-center">
 										{errorMessage}
 									</p>
 								</div>
 							)}
-				<button type="submit" className="btn btn-primary mb-5">Submit</button>
+				<button type="submit" onClick={handleFormSubmit} className="btn btn-primary mb-5">Submit</button>
 			</form>
 		</div>
 	)
