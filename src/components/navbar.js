@@ -1,6 +1,6 @@
 function Navbar(props) {
     return(
-        <header class="header">
+        <header className="header">
           <h1>Ryann Goldberg</h1>
           <div>
           <ul>
